@@ -1,3 +1,4 @@
+  
 import React from 'react'
 import {UserMenu as Menu} from '../components'
 import './table.style.css'
@@ -7,7 +8,4 @@ const User = ({children}) => (<>
     <Menu/>
     {children}
 </>)
-
 export default User
-
-
