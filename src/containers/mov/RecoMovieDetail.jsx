@@ -17,6 +17,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import DayoungAppBar from './DayoungAppBar';
 import Link from '@material-ui/core/Link';
+import { useSelector } from 'react-redux';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -61,6 +62,7 @@ const cards = [1,2,3,4,5,6,7];
 
 export default function RecoMovieDetail() {
   const classes = useStyles();
+  const user = useSelector(state => (state.userReducer.user))
 
   const [data, setData] = useState([])
   useEffect(() => {

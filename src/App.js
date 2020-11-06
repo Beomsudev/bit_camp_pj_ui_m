@@ -19,12 +19,10 @@ const rootReducer = combineReducers({
 export default function App(){
     const [loggedIn, setLoggedIn] = useState(sessionStorage.getItem('sessionUser'))
     return (<>
-    <Router>
         <Nav isAuth = {loggedIn}/>
         <hr/>
         <main>
         <Switch>
-            <Provider store = {createStore(rootReducer, applyMiddleware(ReduxThunk))}>
                 <Route exact path='/' component={Home}></Route>
                 <Redirect from = {'/home'} to={'/'}/> 
                 <Route path='/user' component={User}></Route>
@@ -58,8 +56,6 @@ export default function App(){
                 <Route path='/read-article' component={ReadArticle}></Route>
                 <Route path='/remove-article' component={RemoveArticle}></Route>
                 <Route path='/article-write-form' component={ArticleWriteForm}></Route>
-            </Provider>,    
         </Switch>
         </main>
-    </Router>
 </>)}

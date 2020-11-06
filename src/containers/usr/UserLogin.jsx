@@ -15,6 +15,7 @@ import Grid from '@material-ui/core/Grid'
 // import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
+import { UserActions } from '../../modules/user.action'
 
 function Copyright() {
   return (
@@ -131,7 +132,7 @@ export default function UserLogin() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick= {login}
+              onClick= {e => dispatchEvent(userActions.login)}
             >
               Sign In
             </Button>

@@ -30,7 +30,18 @@ export default function userService(){
         window.location.reload()
         history.push("/actor")  // 여기 치는 부분으로 이동
 
-    /*  axios.post(`http://localhost:8080/api/access`, {"user_id":user_id, "password":password})
+    async function register (user_id, password, gender, email, lname, fname, age) {
+        const req = {
+            metohs: c.post, 
+            url: `${c.url}/api/auth`,
+            data: {user_id, password, gender, email, lname, fname, age},
+            auth: c.auth
+        }
+        const res = await axios(req)
+        alert(`아이디 생성`)
+
+    /*  
+    axios.post(`http://localhost:8080/api/access`, {"user_id":user_id, "password":password})
             .then(res => {
                 alert(`Welcome ! ${res.data["fname"]}.  ${res.data["user_id"]}'s connection is successful. ! `)
   
@@ -45,4 +56,3 @@ export default function userService(){
                 window.location.reload()
             }) 
     */
-    }
